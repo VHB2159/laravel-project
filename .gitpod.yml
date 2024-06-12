@@ -1,0 +1,17 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      composer create-project --prefer-dist laravel/laravel my-laravel-app
+      cd my-laravel-app
+      cp .env.example .env
+      php artisan key:generate
+      touch database/database.sqlite
+  - command: |
+      cd my-laravel-app
+      php artisan serve --host=0.0.0.0
+
+ports:
+  - port: 8000
+    onOpen: open-preview
