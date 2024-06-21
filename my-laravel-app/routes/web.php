@@ -2,14 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/', function () {
+    return view('root');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
